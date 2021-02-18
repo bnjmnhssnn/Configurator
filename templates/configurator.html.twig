@@ -1,0 +1,18 @@
+{% block configurator %}
+<section id="configurator">
+    {% for step in configurator_tree.steps %}
+        <p>{{ step.label }}</p>
+        <h3>{{ step.title }}</h3>
+        {% for field in step.fields %}
+            <section>
+                {% if field.type %}
+                    {% set value = form.value(field.name) %}
+                    <div class="wrapper-{{ field.name }}">
+                        {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+                    </div>
+                {% endif %}                 
+            </section>
+        {% endfor %}
+    {% endfor %}
+</section>
+{% endblock %}

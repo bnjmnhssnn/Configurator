@@ -1,0 +1,28 @@
+{
+  "name": "bnjmnhssnn/configurator",
+  "type": "grav-plugin",
+  "description": "--",
+  "keywords": ["plugin"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Benjamin Hosseinian",
+      "email": "info@benjamin-hosseinian.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\Configurator\\": "classes/"
+    },
+    "classmap":  ["configurator.php"]
+  },
+  "config": {
+    "platform": {
+      "php": "7.1.3"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+name: Configurator
+slug: configurator
+type: plugin
+version: 0.1.0
+description: --
+icon: plug
+author:
+  name: Benjamin Hosseinian
+  email: info@benjamin-hosseinian.de
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    configurator_tree:
+      type: editor
+      label: Configurator Tree
+      default: >
+        steps:
+          - label: Schritt 1
+            title: Modell wählen
+            fields:
+              - 
+                type: radio
+                options:
+                  1: Pickup
+                  2: Sportwagen
+                  3: Minivan
+          - label: Schritt 2
+            title: Farbauswahl
+            fields:
+              -
+                type: radio
+                options:
+                  4: Rot
+                  5: Silber
+                  6: Schwarz
+          - label: Schritt 3
+            title: Ausstattung
+            fields:
+              - type: checkbox
+                label: Alufelgen
+                name: 7
+              - type: checkbox
+                label: Seilwinde
+                name: 8
+              - type: checkbox
+                label: Fahrassistent
+                name: 9
+
+      validate:
+        type: yaml
+
