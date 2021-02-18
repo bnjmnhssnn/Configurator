@@ -11,7 +11,7 @@
 >
     <testsuites>
         <testsuite name="Default">
-            <file>tests/TreeTest.php</file>
+            <file>tests/ConfiguratorTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

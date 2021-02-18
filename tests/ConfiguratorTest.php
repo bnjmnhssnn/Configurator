@@ -1,9 +1,9 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Grav\Plugin\Configurator\Tree;
+use Grav\Plugin\Configurator\Configurator;
 use Symfony\Component\Yaml\Yaml;
 
-final class TreeTest extends TestCase
+final class ConfiguratorTest extends TestCase
 {
     public function testInstanciation()
     {
@@ -22,7 +22,7 @@ final class TreeTest extends TestCase
         $session_mock = $this->getMock('Grav\Common\Session', []);
 
         $this->expectNotToPerformAssertions();
-        $tree = new Tree(
+        $tree = new Configurator(
             $config_mock,
             $session_mock
         );

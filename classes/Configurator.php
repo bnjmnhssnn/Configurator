@@ -5,7 +5,7 @@ use Grav\Common\Config\Config;
 use Grav\Common\Session;
 
 
-class Tree
+class Configurator
 {
     public function __construct(Config $config, Session $session)
     {
@@ -16,6 +16,8 @@ class Tree
 
         
     }
+
+
 
    
 
