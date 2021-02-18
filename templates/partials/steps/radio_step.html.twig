@@ -1,9 +1,20 @@
 {% block radio_step %}
     <form>
-        {% for choice in step.choices %}
-            {{ choice.name }}<br>
-        {% endfor %}
-        <button>Zurück</button>
-        <button>Bestätigen</button>
+        <fieldset>
+            {% for choice in step.choices %}
+                <div>
+                    <input 
+                        type="radio" 
+                        id="step-{{ step.id }}-choice-{{ choice.id }}" 
+                        name="step_{{ step.id }}" 
+                        value="{{choice.id}}">
+                    <label for="step-{{ step.id }}-choice-{{ choice.id }}">{{ choice.name }}</label> 
+                </div>
+            {% endfor %}
+        </fieldset>
+        {% if step.id != 1 %}
+            <button name="step_{{ step.id }}_action" value="back">Zurück</button>
+        {% endif %}
+        <button name="step_{{ step.id }}_action" value="confirm">Bestätigen</button>
     </form>
 {% endblock %}

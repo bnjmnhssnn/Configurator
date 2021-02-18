@@ -13,8 +13,11 @@ class Configurator
         $choices = $config->get('plugins.configurator.configurator_choices');
         $session_values = $session->configurator ?? [];
         $choices_by_id = array_combine(array_column($choices, 'id'), $choices);
+        $step_index = 1;
         $processed_steps = array_map(
-            function($step) use ($choices_by_id, $session_values) {
+            function($step) use ($choices_by_id, $session_values, &$step_index) {
+                $step['id'] = $step_index;
+                $step_index++;
                 $step['choices'] = array_map(
                     function($choice) use ($choices_by_id) {
                         return $choices_by_id[$choice['id']];

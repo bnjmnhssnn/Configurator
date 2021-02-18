@@ -1,9 +1,18 @@
 {% block checkboxes_step %}
     <form>
         {% for choice in step.choices %}
-            {{ choice.name }}<br>
+            <div>
+                <input 
+                    type="checkbox" 
+                    id="step-{{ step.id }}-choice-{{ choice.id }}" 
+                    name="step_{{ step.id }}_choice_{{ choice.id }}" 
+                    value="1">
+                <label for="step-{{ step.id }}-choice-{{ choice.id }}">{{ choice.name }}</label> 
+            </div>
         {% endfor %}
-        <button>Zurück</button>
-        <button>Bestätigen</button>
+        {% if step.id != 1 %}
+            <button name="step_{{ step.id }}_action" value="back">Zurück</button>
+        {% endif %}
+        <button name="step_{{ step.id }}_action" value="confirm">Bestätigen</button>
     </form>
 {% endblock %}
