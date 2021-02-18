@@ -1,0 +1,41 @@
+steps:
+  -
+    title: Modell wählen
+    type: radio
+    choices:
+      -
+        id: 1
+      -
+        id: 2
+      -
+        id: 3
+  -
+    title: Farbauswahl
+    type: radio
+    choices:
+      -
+        id: 4
+      -
+        id: 5
+      -
+        id: 6
+        depends_on: 3
+  -
+    title: Extras
+    type: checkboxes
+    choices: 
+      -
+        id: 7
+        depends_on: 1
+      -
+        id: 8
+        depends_on: 2
+      -
+        id: 9
+  -
+    title: Jetzt dazubuchen
+    type: checkboxes
+    depends_on: 1
+    choices:
+      -
+        id: 10
