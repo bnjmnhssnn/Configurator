@@ -25,42 +25,98 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    configurator_choices:
+      type: editor
+      validate:
+        type: yaml
+      label: Konfigurator Wahlmöglichkeiten
+      default: >
+        -
+          id: 1
+          name: Pickup
+          type: car_model
+        - 
+          id: 2
+          name: Sportwagen
+          type: car_model
+        -
+          id: 3
+          name: Minivan
+          type: car_model
+        -
+          id: 4
+          name: Rot
+          type: color
+        -
+          id: 5
+          name: Grün
+          type: color
+        -
+          id: 6
+          name: Silber
+          type: color
+        -
+          id: 7
+          name: Alufelgen
+          type: extras
+        -
+          id: 8
+          name: Seilwinde
+          type: extras
+        -
+          id: 9
+          name: Fahrassistent
+          type: extras
+        -
+          id: 10
+          name: Nürburgring Rennwochenende
+          type: extras
+
     configurator_tree:
       type: editor
       label: Configurator Tree
-      default: >
-        steps:
-          - label: Schritt 1
-            title: Modell wählen
-            fields:
-              - 
-                type: radio
-                options:
-                  1: Pickup
-                  2: Sportwagen
-                  3: Minivan
-          - label: Schritt 2
-            title: Farbauswahl
-            fields:
-              -
-                type: radio
-                options:
-                  4: Rot
-                  5: Silber
-                  6: Schwarz
-          - label: Schritt 3
-            title: Ausstattung
-            fields:
-              - type: checkbox
-                label: Alufelgen
-                name: 7
-              - type: checkbox
-                label: Seilwinde
-                name: 8
-              - type: checkbox
-                label: Fahrassistent
-                name: 9
-
       validate:
         type: yaml
+      default: >
+        steps:
+          -
+            title: Modell wählen
+            type: radio
+            choices:
+              -
+                id: 1
+              -
+                id: 2
+              -
+                id: 3
+          -
+            title: Farbauswahl
+            type: radio
+            choices:
+              -
+                id: 4
+              -
+                id: 5
+              -
+                id: 6
+                depends_on: 3
+          -
+            title: Extras
+            type: checkboxes
+            choices: 
+              -
+                id: 7
+                depends_on: 1
+              -
+                id: 8
+                depends_on: 2
+              -
+                id: 9
+          -
+            title: Jetzt dazubuchen
+            type: checkboxes
+            depends_on: 1
+            choices:
+              -
+                id: 10
 
