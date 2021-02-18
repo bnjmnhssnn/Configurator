@@ -1,41 +1,40 @@
-choices:
-  -
-    id: 1
-    name: Pickup
-    type: car_model
-  - 
-    id: 2
-    name: Sportwagen
-    type: car_model
-  -
-    id: 3
-    name: Minivan
-    type: car_model
-  -
-    id: 4
-    name: Rot
-    type: color
-  -
-    id: 5
-    name: Grün
-    type: color
-  -
-    id: 6
-    name: Silber
-    type: color
-  -
-    id: 7
-    name: Alufelgen
-    type: extras
-  -
-    id: 8
-    name: Seilwinde
-    type: extras
-  -
-    id: 9
-    name: Fahrassistent
-    type: extras
-  -
-    id: 10
-    name: Nürburgring Rennwochenende
-    type: extras
+-
+  id: 1
+  name: Pickup
+  type: car_model
+- 
+  id: 2
+  name: Sportwagen
+  type: car_model
+-
+  id: 3
+  name: Minivan
+  type: car_model
+-
+  id: 4
+  name: Rot
+  type: color
+-
+  id: 5
+  name: Grün
+  type: color
+-
+  id: 6
+  name: Silber
+  type: color
+-
+  id: 7
+  name: Alufelgen
+  type: extras
+-
+  id: 8
+  name: Seilwinde
+  type: extras
+-
+  id: 9
+  name: Fahrassistent
+  type: extras
+-
+  id: 10
+  name: Nürburgring Rennwochenende
+  type: extras

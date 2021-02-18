@@ -3,7 +3,7 @@ namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
 use Grav\Common\Plugin;
-use Grav\Plugin\Configurator\Tree;
+use Grav\Plugin\Configurator\Configurator;
 
 /**
  * Class ConfiguratorPlugin
@@ -24,9 +24,7 @@ class ConfiguratorPlugin extends Plugin
     public static function getSubscribedEvents(): array
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0],
-            #'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
-            #'onTwigSiteVariables' => ['onTwigSiteVariables', 0],
+            'onPluginsInitialized' => ['onPluginsInitialized', 0]
         ];
     }
 
@@ -45,7 +43,7 @@ class ConfiguratorPlugin extends Plugin
         if ($this->isAdmin()) {
             return;
         }
-        $uri = $this->grav['uri'];
+        #$uri = $this->grav['uri'];
         
 
 
@@ -74,12 +72,9 @@ class ConfiguratorPlugin extends Plugin
     public function onTwigSiteVariables()
     {
         $this->grav['assets']->addJs('plugin://configurator/assets/test.js');  
-
+        $configurator = new Configurator($this->config, $this->grav['session']);
         $twig = $this->grav['twig'];
-        $twig->twig_vars['testvar'] = 'foobarbaz';
-
-        $tree = new Tree($this->config, $this->grav['session']);
-        $twig->twig_vars['configurator_tree'] = $tree->get();
+        $twig->twig_vars['configurator'] = $configurator->get();
     }
 
 

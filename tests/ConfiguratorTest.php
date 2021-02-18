@@ -12,8 +12,10 @@ final class ConfiguratorTest extends TestCase
             $this->returnCallBack(
                 function($path) {
                     switch($path) {
-                        case 'plugins.configurator.configurator_tree':
+                        case 'plugins.configurator.configurator_tree.steps':
                             return Yaml::parse(file_get_contents(__DIR__ . '/configurator_tree.mock.yaml'));
+                        case 'plugins.configurator.configurator_choices':
+                            return Yaml::parse(file_get_contents(__DIR__ . '/configurator_choices.mock.yaml'));   
                     }    
                 }
             )    

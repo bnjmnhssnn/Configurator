@@ -1,0 +1,9 @@
+{% block checkboxes_step %}
+    <form>
+        {% for choice in step.choices %}
+            {{ choice.name }}<br>
+        {% endfor %}
+        <button>Zurück</button>
+        <button>Bestätigen</button>
+    </form>
+{% endblock %}

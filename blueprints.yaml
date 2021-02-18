@@ -31,7 +31,6 @@ form:
         type: yaml
       label: Konfigurator Wahlmöglichkeiten
       default: >
-        choices:
           -
             id: 1
             name: Pickup

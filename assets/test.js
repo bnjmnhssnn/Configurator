@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    $('#configurator').css('color', 'red');
+    //$('#configurator').css('color', 'red');
 });
